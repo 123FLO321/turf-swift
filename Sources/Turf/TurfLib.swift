@@ -11,7 +11,7 @@ let equatorialRadius: CLLocationDistance = 6_378_137
 public typealias LineSegment = (CLLocationCoordinate2D, CLLocationCoordinate2D)
 
 
-public struct Turf {
+public struct TurfLib {
     
     /**
      Returns the intersection of two line segments.

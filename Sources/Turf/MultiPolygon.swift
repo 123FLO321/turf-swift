@@ -14,6 +14,13 @@ public struct MultiPolygon: Codable, Equatable {
     public init(_ coordinates: [[[CLLocationCoordinate2D]]]) {
         self.coordinates = coordinates
     }
+    
+    public init(_ polygons: [Polygon]) {
+        self.coordinates = [[[CLLocationCoordinate2D]]]()
+        for polygon in polygons {
+            self.coordinates.append(polygon.coordinates)
+        }
+    }
 }
 
 public struct MultiPolygonFeature: GeoJSONObject {
@@ -40,4 +47,26 @@ public struct MultiPolygonFeature: GeoJSONObject {
         try container.encode(properties, forKey: .properties)
         try container.encodeIfPresent(identifier, forKey: .identifier)
     }
+}
+
+extension MultiPolygon {
+    
+    public var polygons: [Polygon] {
+        var polygons = [Polygon]()
+        for polygonCoordinates in coordinates {
+            polygons.append(Polygon(polygonCoordinates))
+        }
+        return polygons
+    }
+    
+    public func contains(_ coordinate: CLLocationCoordinate2D, ignoreBoundary: Bool = false) -> Bool {
+        
+        for polygon in polygons {
+            if polygon.contains(coordinate, ignoreBoundary: ignoreBoundary) {
+                return true
+            }
+        }
+        return false
+    }
+    
 }
