@@ -1,7 +1,4 @@
 import Foundation
-#if !os(Linux)
-import CoreLocation
-#endif
 
 public typealias LocationRadians = Double
 public typealias RadianDistance = Double

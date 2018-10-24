@@ -1,8 +1,4 @@
 import Foundation
-#if !os(Linux)
-import CoreLocation
-#endif
-
 
 public enum GeometryType: String {
     case Point

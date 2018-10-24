@@ -1,8 +1,4 @@
 import Foundation
-#if !os(Linux)
-import CoreLocation
-#endif
-
 
 /**
  A `MultiPint` geometry. The coordinates property represents a `[CLLocationCoordinate2D]`.

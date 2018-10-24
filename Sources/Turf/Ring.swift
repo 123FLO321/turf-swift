@@ -1,7 +1,4 @@
 import Foundation
-#if !os(Linux)
-import CoreLocation
-#endif
 
 /**
  Creates a `Ring` struct that represents a closed figure that is bounded by three or more straight line segments.

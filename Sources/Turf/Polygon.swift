@@ -1,8 +1,4 @@
 import Foundation
-#if !os(Linux)
-import CoreLocation
-#endif
-
 
 /**
  A `Polygon` geometry represents a shape constisting of a closed `LineString`.

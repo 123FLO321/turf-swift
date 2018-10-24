@@ -1,7 +1,4 @@
 import XCTest
-#if !os(Linux)
-import CoreLocation
-#endif
 import Turf
 
 class PointTests: XCTestCase {

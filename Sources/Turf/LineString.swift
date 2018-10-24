@@ -1,8 +1,4 @@
 import Foundation
-#if !os(Linux)
-import CoreLocation
-#endif
-
 
 // `Polyline` has been renamed to `LineString`. This alias is for backwards compatibility.
 public typealias Polyline = LineString

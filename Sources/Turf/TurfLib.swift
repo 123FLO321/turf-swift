@@ -1,8 +1,4 @@
 import Foundation
-#if !os(Linux)
-import CoreLocation
-#endif
-
 
 let metersPerRadian: CLLocationDistance = 6_373_000.0
 // WGS84 equatorial radius as specified by the International Union of Geodesy and Geophysics

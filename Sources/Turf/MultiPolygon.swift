@@ -1,8 +1,4 @@
 import Foundation
-#if !os(Linux)
-import CoreLocation
-#endif
-
 
 /**
  A `MultiLineString` geometry. The coordinates property represents a `[LineString]`.

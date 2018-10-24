@@ -1,7 +1,5 @@
 import XCTest
-#if !os(Linux)
-import CoreLocation
-#endif
+
 @testable import Turf
 
 let metersPerMile: CLLocationDistance = 1_609.344
@@ -275,7 +273,7 @@ class TurfTests: XCTestCase {
     
     func testIntersection() {
         let point1 = CLLocationCoordinate2D(latitude: 30, longitude: 30)
-        let a = Turf.intersection((CLLocationCoordinate2D(latitude: 20, longitude: 20), CLLocationCoordinate2D(latitude: 40, longitude: 40)), (CLLocationCoordinate2D(latitude: 20, longitude: 40), CLLocationCoordinate2D(latitude: 40, longitude: 20)))
+        let a = TurfLib.intersection((CLLocationCoordinate2D(latitude: 20, longitude: 20), CLLocationCoordinate2D(latitude: 40, longitude: 40)), (CLLocationCoordinate2D(latitude: 20, longitude: 40), CLLocationCoordinate2D(latitude: 40, longitude: 20)))
         XCTAssertEqual(a, point1)
     }
     

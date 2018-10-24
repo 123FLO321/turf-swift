@@ -1,7 +1,4 @@
 import Foundation
-#if !os(Linux)
-import CoreLocation
-#endif
 
 public enum FeatureType: String {
     case feature = "Feature"

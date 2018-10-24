@@ -1,7 +1,4 @@
 import Foundation
-#if !os(Linux)
-import CoreLocation
-#endif
 
 public struct BoundingBox: Codable {
     

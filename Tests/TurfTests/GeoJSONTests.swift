@@ -1,6 +1,5 @@
 import XCTest
 import Turf
-import CoreLocation
 
 class GeoJSONTests: XCTestCase {
     

@@ -1,6 +1,5 @@
 import Foundation
 
-
 public struct FeatureCollection: GeoJSONObject {
     public var type: FeatureType = .featureCollection
     public var identifier: FeatureIdentifier?

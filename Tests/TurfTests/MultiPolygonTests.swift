@@ -1,7 +1,4 @@
 import XCTest
-#if !os(Linux)
-import CoreLocation
-#endif
 import Turf
 #if os(OSX)
 import struct Turf.Polygon // Conflicts with MapKit’s Polygon

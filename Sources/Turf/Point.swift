@@ -1,8 +1,4 @@
 import Foundation
-#if !os(Linux)
-import CoreLocation
-#endif
-
 
 /**
  A `Point` geometry. The `coordinates` property represents a single position.

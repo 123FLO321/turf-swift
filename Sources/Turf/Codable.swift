@@ -1,7 +1,4 @@
 import Foundation
-#if !os(Linux)
-import CoreLocation
-#endif
 
 public protocol JSONType: Codable {
     var jsonValue: Any { get }
