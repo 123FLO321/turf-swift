@@ -185,7 +185,9 @@ extension LineString {
         
         var coords = ends.0.index == ends.1.index ? [] : Array(coordinates[ends.0.index + 1...ends.1.index])
         coords.insert(ends.0.coordinate, at: 0)
-        coords.append(ends.1.coordinate)
+        if coords.last != ends.1.coordinate {
+            coords.append(ends.1.coordinate)
+        }
         
         return LineString(coords)
     }
@@ -225,7 +227,7 @@ extension LineString {
                 closestCoordinate = IndexedCoordinate(coordinate: segment.1, index: index+1, distance: distances.1)
             }
             if intersectionDistance != nil && intersectionDistance! < closestCoordinate?.distance ?? .greatestFiniteMagnitude {
-                closestCoordinate = IndexedCoordinate(coordinate: intersectionPoint!, index: (distances.0 < distances.1 ? index : index+1), distance: intersectionDistance!)
+                closestCoordinate = IndexedCoordinate(coordinate: intersectionPoint!, index: index, distance: intersectionDistance!)
             }
         }
         
